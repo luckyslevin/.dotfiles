@@ -1,4 +1,5 @@
 #!/bin/sh
+alias reload="source ~/.zshrc"
 alias j='z'
 alias f='zi'
 alias g='lazygit'
