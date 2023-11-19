@@ -64,3 +64,5 @@ export PATH="$HOME/.local/bin":$PATH
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 . /usr/local/opt/asdf/libexec/asdf.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
