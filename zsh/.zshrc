@@ -33,6 +33,21 @@ plug "zsh-users/zsh-syntax-highlighting"
 # PROMPT="%~ %# "
 PROMPT="%{${fg[blue]}%}[%n@%m]%{${reset_color}%} %~
 🐼  %# "
+RPROMPT="%t"
+
+#######################################
+# vcs_info
+autoload -Uz vcs_info
+autoload -Uz add-zsh-hook
+
+zstyle ':vcs_info:*' formats '%F{green}(%s)-[%b]%f'
+zstyle ':vcs_info:*' actionformats '%F{red}(%s)-[%b|%a]%f'
+
+function _update_vcs_info_msg() {
+    LANG=en_US.UTF-8 vcs_info
+    RPROMPT="${vcs_info_msg_0_}"
+}
+add-zsh-hook precmd _update_vcs_info_msg
 
 # keybinds
 bindkey '^ ' autosuggest-accept
@@ -48,3 +63,5 @@ export PATH="$HOME/.local/bin":$PATH
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+. /usr/local/opt/asdf/libexec/asdf.sh
