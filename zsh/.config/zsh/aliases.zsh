@@ -49,25 +49,16 @@ alias mach_java_mode="export SDKMAN_DIR="$HOME/.sdkman" && [[ -s "$HOME/.sdkman/
 alias m="git checkout master"
 alias s="git checkout stable"
 
-if [[ $TERM == "xterm-kitty" ]]; then
-  alias ssh="kitty +kitten ssh"
-fi
+alias ll="eza -lbF --git"
+alias la="eza -lbhHigmuSa --time-style=long-iso --git --color-scale"
+alias lx="eza -lbhHigmuSa@ --time-style=long-iso --git --color-scale"
+alias llt="eza -l --git --tree"
+alias lt="eza --tree --level=2"
+alias llm="eza -lbGF --git --sort=modified"
+alias lld="eza -lbhHFGmuSa --group-directories-first"
 
-case "$(uname -s)" in
-
-Darwin)
-	# echo 'Mac OS X'
-	alias ls='ls -G'
-	;;
-
-Linux)
-	alias ls='ls --color=auto'
-	;;
-
-CYGWIN* | MINGW32* | MSYS* | MINGW*)
-	# echo 'MS Windows'
-	;;
-*)
-	# echo 'Other OS'
-	;;
-esac
+#tmux
+alias t="tmux"
+alias tn='_tmux_new() { t new -s "$1"; }; _tmux_new'
+alias ta='_tmux_attach() { t attach -t "$1"; }; _tmux_attach'
+alias tk='_tmux_kill() { t kill-sess -t "$1"; }; _tmux_kill'
