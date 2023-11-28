@@ -35,7 +35,7 @@ alias pscpu='ps auxf | sort -nr -k 3 | head -5'
 # gpg encryption
 # verify signature for isos
 alias gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
-a# receive the key of a developer
+# receive the key of a developer
 alias gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
 
 alias m="git checkout master"
