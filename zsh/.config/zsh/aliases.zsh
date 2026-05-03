@@ -1,8 +1,10 @@
 #!/bin/sh
-alias reload="source ~/.zshrc"
+alias r="source ~/.zshrc"
 alias j='z'
 alias f='zi'
-alias g='gitui'
+alias g="lazygit"
+alias n="nvim"
+alias y="yazi"
 alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
 
 # get fastest mirrors
@@ -31,12 +33,6 @@ alias psmem='ps auxf | sort -nr -k 4 | head -5'
 
 # get top process eating cpu ##
 alias pscpu='ps auxf | sort -nr -k 3 | head -5'
-
-# gpg encryption
-# verify signature for isos
-alias gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
-# receive the key of a developer
-alias gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
 
 alias m="git checkout master"
 alias s="git checkout stable"

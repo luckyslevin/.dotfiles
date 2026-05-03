@@ -30,13 +30,6 @@ plug "zsh-users/zsh-syntax-highlighting"
 # keybinds
 bindkey '^ ' autosuggest-accept
 
-export PATH="$HOME/.local/bin":$PATH
-
-#if command -v bat &> /dev/null; then
-#  alias cat="bat -pp --theme \"Visual Studio Dark+\""
-#  alias catt="bat --theme \"Visual Studio Dark+\""
-#fi
-
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
